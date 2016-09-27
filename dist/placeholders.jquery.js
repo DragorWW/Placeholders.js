@@ -514,10 +514,12 @@
     // If the element is part of a form, make sure the placeholder string is
     // not submitted as a value.
     var form = elem.form;
-    if ( form && typeof form === 'string' ) {
+    if ( form ) {
 
-      // Get the real form.
-      form = document.getElementById(form);
+      if ( typeof form === 'string' ) {
+        // Get the real form.
+        form = document.getElementById(form);
+      }
 
       // Set a flag on the form so we know it's been handled (forms can contain
       // multiple inputs).
